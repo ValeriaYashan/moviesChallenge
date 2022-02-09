@@ -15,12 +15,13 @@
     <br>
     <p>NOMBRE: <%= movie.title %> </p>
     <p>GENERO: <%= movie.genre.name %> </p>
-    
+    <p>ACTORES: <%= movie.genre.name %> </p>
     <br>
     <section>
+        <a class="botonAgregar" href="/movies/add">Agregar una Pelicula</a>
         <a class="botonModificar" href="/movies/edit/<%= movie.id %>">Modificar</a>
-        <a class="botonBorrar" href="/movies/delete/<%= movie.id %>">Borrar</a>
-        <a class="botonVolver" href="/movies">Listado de Películas</a>
+        <a class="botonEliminar" href="/movies/delete/<%= movie.id %>">Eliminar</a>
+        <a class="botonVolver" href="/">Volver al inicio</a>
     </section>
 
 </body>
