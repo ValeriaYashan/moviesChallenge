@@ -76,11 +76,13 @@ const moviesController = {
         .update(
             {
                 title: req.body.title,
+                genre_id: req.body.genre_id,
                 rating: req.body.rating,
                 awards: req.body.awards,
                 release_date: req.body.release_date,
                 length: req.body.length,
-                genre_id: req.body.genre_id
+               actors: req.body.actors.first_name,
+              
             },
             {
                 where: {id: movieId}

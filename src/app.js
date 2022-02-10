@@ -5,7 +5,7 @@ const app = express();
 
 
 
-const indexRouter = require('./routes/index');
+const indexRoutes = require('./routes/indexRoutes');
 const moviesRoutes = require('./routes/moviesRoutes');
 const genresRoutes = require('./routes/genresRoutes');
 const userRoutes = require('./routes/userRoutes');
@@ -25,7 +25,7 @@ app.use(express.json())
 /
 app.use(methodOverride('_method'));
 
-app.use('/', indexRouter);
+app.use('/', indexRoutes);
 app.use(moviesRoutes);
 app.use(genresRoutes);
 app.use(userRoutes);

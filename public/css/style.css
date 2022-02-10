@@ -1,4 +1,3 @@
-@import url("general.css");
 
 *{
   box-sizing: border-box;
@@ -14,6 +13,50 @@
   --soft: #ebebeb;
   --red: #DB4437;
   --blue: #4267B2;
+}
+/*header*/
+.navegacion {
+  background-color: #1a1a1a;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.navegacion .lista {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navegacion a {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.navegacion .item {
+  width: 100%;
+  text-align: center;
+  order: 6;
+  display: none;
+}
+
+.navegacion .icon-menu {
+  order: 2;
+}
+
+
+.navegacion a:hover,
+.navegacion .icon-menu:hover {
+  background: none;
+  color: var(--primario);
+  transition: 200ms;
+  background-color: transparent;
+}
+
+.item.active {
+  display: block;
 }
 
 body{
@@ -62,6 +105,14 @@ h2{
 h3{
   font-size: 22px;
 }
+a{
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: blue;
+}
+a:hover{
+  transform: scale(1.2);
+}
 /*Estilos principales de botón*/
 button.submit{
   height: 30px;
@@ -107,15 +158,8 @@ button.submit:hover:after, button.submit:hover:before{
   height: 100%;
 }
 
-/*Estilos principales de etiquetas ancla*/
-a{
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: var(--dark);
-}
-a:hover{
-  transform: scale(1.2);
-}
+
+
 
 /*Barra de navegación*/
 .navbar{
@@ -140,6 +184,12 @@ a:hover{
 .botonEliminar{
   color: white;
   background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+}
+.botonCancelar{
+  color: white;
+  background-color: rgb(53, 44, 66);
   padding: 10px;
   border-radius: 10px;
 }

@@ -26,9 +26,29 @@ CRUD
 AGREGAR MAS CAMPOS
 FALTA QUE SI ESTA VACIO ALGUN CAMPO ENTONCES LO MUESTRE sin ese campo
 MEJORAR LA PREGUNTA DEL DELETE CON VENTANA
+
 ##commit 5##
+Registro y login
+-registrar a un usuario regular y a un usuario administrador para que luego puedan loguearse
+en el sitio y mantenerse logueados durante toda la navegación. 
+-Únicamente el administrador podrá acceder a las rutas del CRUD para crear, modificar o eliminar
+películas. 
+-El sistema debe permitir al usuario desloguearse (logout).
+
+
+***La base de datos ya cuenta con una tabla “users” en la que podrás identificar al
+usuario regular con el rol “0” (es el dato por defecto) y al administrador con un
+número diferente a tu elección. Una vez registrado el usuario tendrás que modificar a
+mano el número en la columna “rol” de la tabla.
+
 
 ##commit 6##
+Identificar al administrador 
+-Creá los middlewares y ajustes necesarios para que únicamente un rol de
+administrador pueda utilizar las funcionalidades del CRUD. (ADMINMIDDLEWARE)
+
+-El usuario regular y los usuarios no logueados únicamente podrán acceder al listado
+de películas y sus detalles.
 
 ##commit 7##
 -Mejoro estilos y responsive

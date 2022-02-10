@@ -12,16 +12,24 @@
         <img src="/img/logo-SextoSol.png" alt="Movies Challenge">
     </figure>
     <h1><%= movie.title %> </h1>    
-    <br>
-    <p>NOMBRE: <%= movie.title %> </p>
-    <p>GENERO: <%= movie.genre.name %> </p>
-    <p>ACTORES: <%= movie.genre.name %> </p>
-    <br>
     <section>
-        <a class="botonAgregar" href="/movies/add">Agregar una Pelicula</a>
-        <a class="botonModificar" href="/movies/edit/<%= movie.id %>">Modificar</a>
-        <a class="botonEliminar" href="/movies/delete/<%= movie.id %>">Eliminar</a>
-        <a class="botonVolver" href="/">Volver al inicio</a>
+      
+        <br>
+        <h1>DETALLE PELICULA</h1>
+        <p>NOMBRE: <%= movie.title %></p>
+        <p>GENERO: <%= movie.genre.name %></p>
+        ACTORES PRESENTES EN LA PELICULA:
+      </br>
+    
+        <article>
+          <a class="botonAgregar" href="/movies/add">Agregar una Pelicula</a>
+          <a class="botonModificar" href="/movies/edit/<%= movie.id %>">Modificar</a>
+          <a class="botonEliminar" href="/movies/delete/<%= movie.id %>">Eliminar</a>
+          <a class="botonVolver" href="/">Volver al inicio</a>
+        </article>
+    
+     
+      
     </section>
 
 </body>
