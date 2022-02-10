@@ -25,6 +25,6 @@ router.put('/movies/update/:id', moviesController.update);
 router.get('/movies/delete/:id', moviesController.delete);
 router.delete('/movies/delete/:id', moviesController.destroy);
 
-
+//Rutas exigidas para usuario
 
 module.exports = router;
