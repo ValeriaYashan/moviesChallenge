@@ -6,15 +6,40 @@
   </head>
  
    <header>
-     
+    <figure>
+      <img src="/img/logo-SextoSol.png" alt="Movies Challenge">
+  </figure>
    </header>
 
 
    <body>
-   
+     <main>
+      <section>
+        <% if (!locals.user) { %>
+        <div>
+          <button><a href="/users/login">Login</a></button>
+        </div>
+        <div>
+          <button><a href="/users/register">Registro</a></button>
+        </div>
+        <% } else { %>
+        <div>
+          
+          <h1>Bienvenida/o <%= locals.user.name %></h1>
+        </div>
+        <div>
+          <button><a href="/users/logout">Logout</a></button>
+        </div>
+        <div>
+         
+        </div>
+        <% } %>
+      
+      <h1>Bienvenidos a Movies Challenge by Valeria Yashan</h1>
+      <p><a href="/movies">Listado de Películas</a></p>
+      
+     </main>
     
-    <h1>Bienvenidos a Movies Challenge by Valeria Yashan</h1>
-    <p><a href="/movies">Listado de Películas</a></p>
     
 
   </body>
