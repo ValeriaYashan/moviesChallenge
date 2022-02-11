@@ -1,47 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/css/style.css' />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
+  <header>
+    <a class="logo">
+      <img src="/img/logo-SextoSol.png" width='100' alt='Tu cine'>  
+       </a>
+  </header>
  
-   <header>
-    <figure>
-      <img src="/img/logo-SextoSol.png" alt="Movies Challenge">
-  </figure>
-   </header>
-
-
-   <body>
-     <main>
+  <body>
+    <main>
       <section>
         <% if (!locals.user) { %>
         <div>
-          <button><a href="/users/login">Login</a></button>
+          <button><a href="/login">Login</a></button>
         </div>
         <div>
-          <button><a href="/users/register">Registro</a></button>
+          <button><a href="/register">Registro</a></button>
         </div>
         <% } else { %>
         <div>
-          
           <h1>Bienvenida/o <%= locals.user.name %></h1>
         </div>
         <div>
           <button><a href="/users/logout">Logout</a></button>
         </div>
         <div>
-         
+          <button>
+            <a href="/movies/createMovies">Agregar Película</a>
+          </button>
         </div>
         <% } %>
-      
-      <h1>Bienvenidos a Movies Challenge by Valeria Yashan</h1>
-      <p><a href="/movies">Listado de Películas</a></p>
-      
-     </main>
-    
-    
+      </section>
 
+      <section>
+        <h2>LISTADO de PELICULAS</h2>
+        <% for (let i=0; i < allMovie.length; i++) { %>
+        <ul>
+          <li>
+            <a href="/movies/detailMovies/<%= allMovie[i].id %>">
+              <%= allMovie[i].title %>
+            </a>
+          </li>
+        </ul>
+        <% } %>
+      </section>
+    </main>
   </body>
-
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= movie.title %> </title>
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <a class="logo">
+    <img src="/img/logo-SextoSol.png" width='100' alt='Tu cine'>  
+     </a>
+    <body>
+      <main>
+    <section>
+      <h1>DETALLE PELICULA</h1>
+      <article>
+        <p>Título: <%= detail.title %></p>
+        <p>Género: <%= detail.genre.name %></p>
+        <p>Actores presentes en la película:</p>
+        <ul>
+          <% for (let i=0; i < detail.actors.length; i++) { %>
+          <li>
+            <%= detail.actors[i].first_name %> <%= detail.actors[i].last_name %>
+          </li>
+          <% } %>
+        </ul>
+      </article>
+    </section>
+    <section>
+      <% if (!locals.user) { %>
+      <button><a href="/">Volver al listado de peliculas</a></button>
+
+      <% } else { %>
+      <button>
+        <a href="/deleteMovies/<%= detail.id %>">Eliminar película</a>
+      </button>
+      <button>
+        <a href="/editMovies/<%= detail.id %>">Modificar Película</a>
+      </button>
+      <button><a href="/">Volver al listado de películas</a></button>
+      <% } %>
+    </section>
+
+    
+  </body>
+</html>

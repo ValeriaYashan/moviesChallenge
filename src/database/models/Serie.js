@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 
 module.exports = (sequelize, dataTypes) => {
-  const alias = "User";
+  const alias = "Serie";
   const col = {
     id: {
       type: dataTypes.INTEGER(10),
@@ -10,38 +10,34 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
 
-    name: {
-      type: dataTypes.STRING(255),
+    title: {
+      type: dataTypes.STRING(500),
       allowNull: false,
     },
 
-    email: {
-      type: dataTypes.STRING(255),
+    release_date: {
+      type: dataTypes.DATE,
       allowNull: false,
     },
 
-    password: {
-      type: dataTypes.STRING(255),
+    end_date: {
+      type: dataTypes.DATE,
       allowNull: false,
     },
 
-    remember_token: {
-      type: dataTypes.STRING(100),
-    },
-
-    rol: {
-      type: dataTypes.INTEGER(10),
+    genre_id: {
+      type: dataTypes.INTEGER(10).UNSIGNED,
     },
   };
 
   const config = {
-    timestamps: true,
-    tableName: "users",
+    timestamps: false,
+    tableName: "series",
     createdAt: "created_at",
     updatedAt: "updated_at",
   };
 
-  const User = sequelize.define(alias, col, config);
+  const Serie = sequelize.define(alias, col, config);
 
-  return User;
+  return Serie;
 };
