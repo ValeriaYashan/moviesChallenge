@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel='stylesheet' href='/css/style.css' />
+    <title>Create</title>
   </head>
   <body>
      
@@ -12,7 +13,11 @@
    </a>
   <body>
     <h1>AGREGAR una PELICULA</h1>
-    <form action="/movies/createMovies" method="POST">
+    <button>
+      <a href="/createMovies">Agregar Película</a>
+    </button>
+  </div>
+    <form action="/createMovies" method="POST">
       <div>
         <label for="title">Título</label>
         <input

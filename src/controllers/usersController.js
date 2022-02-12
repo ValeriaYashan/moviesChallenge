@@ -5,6 +5,8 @@ const sequelize = db.sequelize;
 const crypto = require("crypto");
 
 const usersController = {
+
+
   register: (req, res) => {
     return res.render("register");
   },

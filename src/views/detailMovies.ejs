@@ -27,19 +27,7 @@
       </article>
     </section>
     <section>
-      <% if (!locals.user) { %>
-      <button><a href="/">Volver al listado de peliculas</a></button>
-
-      <% } else { %>
-      <button>
-        <a href="/deleteMovies/<%= detail.id %>">Eliminar película</a>
-      </button>
-      <button>
-        <a href="/editMovies/<%= detail.id %>">Modificar Película</a>
-      </button>
-      <button><a href="/">Volver al listado de películas</a></button>
-      <% } %>
-    </section>
+      
 
     
   </body>

@@ -6,21 +6,22 @@ const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
 
 const moviesController = {
-  
+
+
   detail: (req, res) => {
     allMovies
       .findByPk(req.params.id, {
         include: [{ association: "genre" }, { association: "actors" }],
       })
       .then((detail) => {
-        return res.render("/moviesDetail/:id", { detail });
+        return res.render("/detailMovies/:id", { detail });
       })
       .catch((error) => {
         return res.redirect(error);
       });
   },
 
-
+  
   add: (req, res) => {
     allGenres
       .findAll()

@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <figure>
-        <img src="/img/logo-SextoSol.png" alt="Movies Challenge">
-    </figure>
+    <a class="logo">
+      <img src="/img/logo-SextoSol.png" width='100' alt='Tu cine'>  
+       </a>
   <body>
     <h1>EDITAR PELICULAS</h1>
     <form action="/editMovies/<%= movie.id %>?_method=PUT" method="POST">
@@ -80,7 +80,19 @@
           <% } %> <% } %>
         </select>
       </div>
+      <% if (!locals.user) { %>
+      <button><a href="/">Volver al listado de peliculas</a></button>
 
+      <% } else { %>
+      <button>
+        <a href="/deleteMovies/<%= detail.id %>">Eliminar película</a>
+      </button>
+      <button>
+        <a href="/editMovies/<%= detail.id %>">Modificar Película</a>
+      </button>
+      <button><a href="/">Volver al listado de películas</a></button>
+      <% } %>
+    </section>
      
   </body>
 </html>
