@@ -1,30 +1,25 @@
 // ************ Require's ************
-const express = require("express");
+const express = require('express');
 const router = express.Router();
+// Controller
+const controller = require('../controllers/moviesController');
 
-const movieController = require("../controllers/moviesController");
+/* Index de Películas. */
+router.get('/movies', controller.index);
 
-const validations = require("../middlewares/ValidateCreateAndEdit");
-const admin = require("../middlewares/admRoute");
+/* Detalle de Película. */
+router.get('/detail/:id', controller.show);
 
+/* Creación de una película */
+router.get('/create', controller.create);
+router.post('/create', controller.store);
 
-router.get("/crud", movieController.crud);
+/* Edición de una película */
+router.get('movies/edit/:id', controller.edit);
+router.put('movies/edit/:id', controller.update);
 
-router.get("detailMovies/:id", movieController.detail);
+/* Eliminación de una película */ 
+router.delete('/delete/:id', controller.destroy);
 
-router.get("/createMovies", admin, movieController.add);
-
-router.post("/createMovies", [admin, validations], movieController.create);
-
-
-router.get("/editMovies/:id", admin, movieController.update);
-
-router.put("/editMovies/:id", [admin, validations], movieController.edit);
-
-
-
-router.get("/deleteMovies/:id", admin, movieController.delete);
-
-router.delete("/deleteMovies/:id", admin, movieController.destroy);
 
 module.exports = router;

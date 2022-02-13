@@ -1,39 +1,16 @@
 const db = require('../database/models');
 const sequelize = db.sequelize;
+const Op = db.Sequelize.Op;
 
-
-const genresController = {
-    'list': (req, res) => {
-        db.Genre.findAll()
-            .then(genres => {
-                if(req.url.includes('api'))
-                return res.json({ meta: { status: 'ok', error: false } , data: genres }).status()
-                else 
-                res.render('genresList.ejs', {genres})
-            })
-    },
-    'detail': (req, res) => {
-        db.Genre.findByPk(req.params.id)
-            .then(genre => {
-                res.render('genresDetail.ejs', {genre});
-            });
-    },
-    getGenresList: (req, res) => {
-        return db.Genre.findAll()
-            .then(genres => {
-                return res.json({ meta: { status: 'ok', error: false } , data: genres }).status()
-                //res.render('genresList.ejs', {genres})
-            })
-    },
-    getGenreDetail: (req, res) => {
-        return db.Genre.findByPk(req.params.id)
-        .then(genre => {
-            return res.
-                json({ meta: { status: 'ok', error: false } , data: genre })
-                .status()
-        });
-    },
-
+module.exports = {
+	index: (req, res) => {
+		db.Genres
+			.findAll({
+					include: ['movies'] // Acá va lo que se puso en 'as' de associate
+			})
+			.then(genres => {
+				return res.render('genres/index', { genres });
+			})
+			.catch(error => console.log(error));
+	},
 }
-
-module.exports = genresController;

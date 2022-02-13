@@ -8,7 +8,7 @@ const app = express();
 const indexRoute = require('./routes/indexRoute');
 const moviesRoute = require('./routes/moviesRoute');
 const genresRoutes = require('./routes/genresRoutes');
-const usersRoute = require('./routes/usersRoute');
+
 
 
 app.set('views', path.resolve(__dirname, './views'));
@@ -26,7 +26,7 @@ app.use(methodOverride('_method'));
 app.use('/',indexRoute);
 app.use(moviesRoute);
 app.use(genresRoutes);
-app.use(usersRoute);
+
 
 app.use(express.json());
 

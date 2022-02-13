@@ -1,0 +1,12 @@
+Administrador (carga, modificación y baja de películas)
+Usuario:admin@mail.com
+Password:Administrador123
+
+Usuario (visualización del listado y detalle de las películas)
+Usuario:cliente@mail.com
+Password:Clientehabitual123
+
+
+Tener en cuenta para db
+
+https://github.com/NicolasOrdoV/Examplepdo/blob/d8f5982de9a3db6fc9ebb6611be4e3c031a9f635/database/base%20mysql.sql

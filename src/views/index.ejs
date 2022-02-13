@@ -3,12 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <header>
-    <a class="logo">
-      <img src="/img/logo-SextoSol.png" width='100' alt='Tu cine'>  
-       </a>
+    
+       <button><a href="/login">Login</a></button>
+        </div>
+        <div>
+          <button><a href="/register">Registro</a></button>
+        </div>
+        <div>
+          <button><a href="/profile">Mi perfil</a></button>
+        </div>
   </header>
  
   <body>
@@ -16,14 +22,9 @@
       <section>
         <% if (!locals.user) { %>
           <div>
-            <button><a href="/crud">Crud</a></button>
+            <button><a href="/create">Agregar una película</a></button>
           </div>
-        <div>
-          <button><a href="/login">Login</a></button>
-        </div>
-        <div>
-          <button><a href="/register">Registro</a></button>
-        </div>
+        <div>      
         <% } else { %>
         <div>
           <h1>Bienvenida/o <%= locals.user.name %></h1>
@@ -34,22 +35,10 @@
         <% } %>
       </section>
         <div>
-          
-        
-
-      <section>
-        <h2>LISTADO de PELICULAS</h2>
-        <% for (let i=0; i < allMovie.length; i++) { %>
-        <ul>
-          <li>
-            <a href="detailMovies/<%= allMovie[i].id %>">
-              <%= allMovie[i].title %>
-            </a>
-          </li>
-        </ul>
-        <% } %>
-      </section>
      
-    </main>
-  </body>
-</html>
+            <a class="listado"  href="/movies"> IR AL LISTADO DE PELICULAS</a>
+            </div>
+      <section>
+    
+     
+  

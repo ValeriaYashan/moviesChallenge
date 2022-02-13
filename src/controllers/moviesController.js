@@ -1,138 +1,80 @@
-const db = require("./../database/models");
-const allMovies = db.Movie;
-const allGenres = db.Genre;
+const db = require('../database/models');
 const sequelize = db.sequelize;
-const { Op } = require("sequelize");
-const { validationResult } = require("express-validator");
+const Op = db.Sequelize.Op;
 
-const moviesController = {
+const movies = db.Movies;
+const genres = db.Genres;
+const actors = db.Actors;
+
+module.exports = {
+	index: (req, res) => {
+		db.Movies
+			.findAll()
+			.then(movies => {
+				return res.render('movies/index', { movies });
+		 	})
+			.catch(error => console.log(error));
+	},
+	show: (req, res) => {
+		db.Movies
+			.findByPk(
+				req.params.id,
+				{
+					include: ['genre', 'actors']
+				}
+			)
+			.then(movie => {
+				return res.render('movies/detail', { movie, title: movie.title  });
+			})
+			.catch(error => console.log(error));
+	},
 
 
-  detail: (req, res) => {
-    allMovies
-      .findByPk(req.params.id, {
-        include: [{ association: "genre" }, { association: "actors" }],
-      })
-      .then((detail) => {
-        return res.render("/detailMovies/:id", { detail });
-      })
-      .catch((error) => {
-        return res.redirect(error);
-      });
-  },
+	create: (req, res) => {
+		sequelize
+			.query('SELECT * FROM genres')
+			.then(genresInDB => {
+				return res.render('movies/create', { genres: genresInDB[0] });
+			})
+			.catch(error => console.log(error))
+	},
+	store: (req, res) => {
+		db.Movies.create(req.body);
+		return res.redirect('/movies');
+	},
 
-  
-  add: (req, res) => {
-    allGenres
-      .findAll()
-      .then((genre) => {
-        return res.render("createMovies", { genre });
-      })
-      .catch((error) => {
-        return res.redirect(error);
-      });
-  },
- 
-  create: (req, res) => {
-    const errors = validationResult(req);
-    if (errors.isEmpty()) {
-      const newMovie = {
-        ...req.body,
-        genre_id: req.body.genre,
-      };
-      allMovies
-        .create(newMovie)
-        .then(() => {
-          return res.redirect("/");
-        })
-        .catch((error) => {
-          return res.redirect(error);
-        });
-    } else {
-      allGenres
-        .findAll()
-        .then((genre) => {
-          return res.render("createMovies", {
-            errors: errors.mapped(),
-            old: req.body,
-            genre,
-          });
-        })
-        .catch((error) => {
-          return res.redirect(error);
-        });
-    }
-  },
-
-  
-  update: (req, res) => {
-    const updateMovie = allMovies.findByPk(req.params.id, {
-      include: ["genre"],
-    });
-    const updateGenre = allGenres.findAll();
-
-    Promise.all([updateMovie, updateGenre])
-      .then(([movie, genre]) => {
-        return res.render("editMovies/:id", { movie, genre });
-      })
-      .catch((error) => {
-        return res.redirect(error);
-      });
-  },
-
-  
-  edit: function (req, res) {
-    const errors = validationResult(req);
-    if (errors.isEmpty()) {
-      allMovies
-        .update(
-          { ...req.body, genre_id: req.body.genre },
-          { where: { id: req.params.id } }
-        )
-        .then(() => {
-          return res.redirect("/");
-        })
-        .catch((error) => {
-          return res.redirect(error);
-        });
-    } else {
-      const updateMovie = allMovies.findByPk(req.params.id, {
-        include: ["genre"],
-      });
-      const updateGenre = allGenres.findAll();
-
-      Promise.all([updateMovie, updateGenre])
-        .then(([movie, genre]) => {
-          return res.render("editMovies", {
-            errors: errors.mapped(),
-            old: req.body,
-            genre,
-            movie,
-          });
-        })
-        .catch((error) => {
-          return res.redirect(error);
-        });
-    }
-  },
-
-  // delete form
-  delete: function (req, res) {
-    allMovies.findByPk(req.params.id).then((movies) => {
-      return res.render("deleteMovies", { movies });
-    });
-  },
-
-  destroy: function (req, res) {
-    allMovies
-      .destroy({ where: { id: req.params.id }, force: true })
-      .then(() => {
-        return res.redirect("/");
-      })
-      .catch(() => {
-        return res.send(error);
-      });
-  },
-};
-
-module.exports = moviesController;
+	destroy: (req, res) => {
+		db.Movies
+			.destroy({
+				where: {
+					id: req.params.id
+				}
+			})
+			.then(() => res.redirect('/movies'));
+	},
+	edit: (req, res) => {
+		db.Movies
+			.findByPk(req.params.id)
+			.then(movie => {
+				// Antes de enviar al peli a al formulario, vamos a traer los géneros
+				sequelize
+					.query('SELECT * FROM genres')
+					.then(genresInDB => {
+						return res.render('movies/edit', { movie, genres: genresInDB[0] });
+					})
+			})
+			.catch(error => console.log(error));
+	},
+	update: (req, res) => {
+		db.Movies
+			.update(
+				req.body,
+				{
+					where: {
+						id: req.params.id
+					}
+				}
+			)
+			.then(() => res.redirect('/movies'));
+	},
+}

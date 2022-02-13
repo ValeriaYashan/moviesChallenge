@@ -1,5 +1,4 @@
 
-
 .login{
     margin: 15px auto;
     max-width: 600px;
@@ -91,32 +90,4 @@
     background-color: var(--soft);
     border-radius: 10px;
 }
-.fa-facebook-f{
-    color: var(--blue);
-}
-.fa-google{
-    color: var(--red);
-}
 
-/*-------------------Media querie para tablet---------------------*/
-@media(min-width: 768px) {
-    .login{
-        border: 1px solid var(--light-border);
-        border-radius: 20px;
-    }
-}
-@media(min-width: 1025px){
-    main{
-        background-image: url('../img/login-image.jpg');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        padding: 0.5px;
-    }
-    .login{
-        width: 40%;
-        /* margin: 50px 0 50px 10px; */
-        margin-left: 10px;
-        background-color: var(--light);
-    }
-}

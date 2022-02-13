@@ -4,61 +4,8 @@
   margin: 0;
   padding: 0;
 }
-:root{
-  /*Colores principales*/
-  --dark: #000000;
-  --light: #ffffff;
-  --gold: #c5ac28;
-  --light-border: #817a7a;
-  --soft: #ebebeb;
-  --red: #DB4437;
-  --blue: #4267B2;
-}
-/*header*/
-
-.navegacion {
-  background-color: #1a1a1a;
-  margin-bottom: 1em;
-  width: 100%;
-}
-
-.navegacion .lista {
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navegacion a {
-  display: block;
-  text-decoration: none;
-  color: white;
-}
-
-.navegacion .item {
-  width: 100%;
-  text-align: center;
-  order: 6;
-  display: none;
-}
-
-.navegacion .icon-menu {
-  order: 2;
-}
 
 
-.navegacion a:hover,
-.navegacion .icon-menu:hover {
-  background: none;
-  color: var(--primario);
-  transition: 200ms;
-  background-color: transparent;
-}
-
-.item.active {
-  display: block;
-}
 
 body{
   font-family: 'Montserrat', sans-serif;
@@ -72,11 +19,12 @@ a {
 img{
   width: 100%;
 }
-figure{
-  width: 20%;
-}
 .titulo{
   text-align: center;
+}
+.listado{
+  color:black;
+  text-decoration:overline;
 }
 main{
   width: 90vw;
@@ -99,6 +47,7 @@ h1,h2,h3,h4{
 }
 h1{
   font-size: 30px;
+  color:blue;
 }
 h2{
   font-size: 24px;
@@ -111,73 +60,18 @@ a{
   text-decoration: none;
   color: blue;
 }
-a:hover{
-  transform: scale(1.2);
-}
-/*Estilos principales de botón*/
-button.submit{
-  height: 30px;
-  color: var(--gold);
-  background-color: transparent;
-  font-weight: bold;
-  border: none;
-  display: block;
-  position: relative;
-}
-button.submit:focus{
-  border: 2px solid var(--light-border);
-  box-shadow: 3px 3px 10px var(--light-border) ;
-}
-button.submit::after, button.submit::before{
-  content: "";
-  display: block;
-  position: absolute;
-  width: 20%;
-  height: 20%;
-  border: 3px solid;
-  transition: all 0.6s linear;
-  border-radius: 2px;
-}
-button.submit::after{
-  bottom: 0;
-  right: 0;
-  border-top-color: transparent;
-  border-left-color: transparent;
-  border-bottom-color: var(--gold);
-  border-right-color: var(--gold);
-}
-button.submit::before{
-  top: 0;
-  left: 0;
-  border-top-color: var(--gold);
-  border-left-color: var(--gold);
-  border-bottom-color: transparent;
-  border-right-color: transparent;
-}
-button.submit:hover:after, button.submit:hover:before{
-  width: 100%;
-  height: 100%;
-}
 
 
 
 
-/*Barra de navegación*/
-.navbar{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  position: relative;
-  min-height: 200px;
+.botonInicio{
+  color: gold;
+  background-color: green;
+  padding: 10px;
+  border-radius: 10px;
 }
-.navbar i {
-  color: var(--light);
-  display: block;
-}
-
-
 .botonAgregar , .botonModificar{
-  color: white;
+  color: gold;
   background-color: green;
   padding: 10px;
   border-radius: 10px;
@@ -194,7 +88,7 @@ button.submit:hover:after, button.submit:hover:before{
   padding: 10px;
   border-radius: 10px;
 }
-.botonVolver{
+.botonEditar{
   color: white;
   background-color: #00B7FF;
   padding: 10px;

@@ -1,11 +1,9 @@
-// ************ Require's ************
-const express = require("express");
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 
 
-const main = require("../controllers/indexController");
-
-
-router.get("/", main.index);
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Movies Challenge' });
+});
 
 module.exports = router;
