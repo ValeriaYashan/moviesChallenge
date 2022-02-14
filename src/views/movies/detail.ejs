@@ -21,11 +21,12 @@
  
       <a class="listado"  href="/movies"<%= movie.id %>">Volver al listado de Películas</a>
       <hr>
-      <h5>¿Seguro que querés borrar esta película?</h5>
-      <form action="/movies/delete/<%= movie.id %>?_method=DELETE" method="POST">
+      <h5>¿Querés borrar esta película?</h5>
+      <form action="/movies<%= movie.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
         <button class ="botonEliminar" type="submit">Eliminar</button>
+
       </form>  
-      <form action="/movies/edit/<%= movie.id %>?_method=UPDATE" method="PUT">
+      <form action="/movies<%= movie.id %>?_method=UPDATE" method="PUT" enctype="multipart/form-data">
         <button class ="botonEditar" type="submit">Editar</button>
       </form>  
     <%- include('../partials/footer')  %>

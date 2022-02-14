@@ -43,3 +43,6 @@ module.exports = function(sequelize,dataTypes){
         
     return User;
 };
+
+/*un usuario puede tener un solo rol (es administrador o es usuario)pero un rol pueden 
+tenerlo muchos usuarios (ej muchos user, muchos administradores)*/
