@@ -7,16 +7,18 @@
 
 ##commit 2##
 -Creación del Home-page del proyecto, debe mostrar el listado de todas las películas
+Debe registrarse/loguearse si ya tiene cuenta
+Si es adm puede agregar película desde la Home-page. 
+Si es user le mostrará bienvenid@ + su nombre
 
-FALTA VISTA QUE SOLO MUESTRE EL LISTADO SIN EL CRUD-PARA USUARIOS
+FALTA LOGIN/REGISTER/PERFIL
 
 ##commit 3##
--Cada película tendrá un link que muestre el detalle completo. En el detalle deben verse los datos más el nombre del género al que pertenece y la lista de actores que trabajaron en ella.
+-Cada película tendrá un link que muestre el detalle completo.
+ En el detalle deben verse los datos más el nombre del género al que pertenece y la lista de actores que trabajaron en ella.
 (Implementar sequelize, crear modelos y establecer relaciones)
 
-FALTA LA LISTA DE ACTORES
-
-
+COMPLETO
 
 ##commit 4##
 CRUD
@@ -41,6 +43,7 @@ usuario regular con el rol “0” (es el dato por defecto) y al administrador c
 número diferente a tu elección. Una vez registrado el usuario tendrás que modificar a
 mano el número en la columna “rol” de la tabla.
 
+BASE DE DATOS MODIFICADA. AGREGUE CAMPOS 0-USER 1-ADMIN
 
 ##commit 6##
 Identificar al administrador 

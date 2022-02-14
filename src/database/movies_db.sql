@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-02-2022 a las 10:40:22
+-- Tiempo de generación: 14-02-2022 a las 15:20:02
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -639,8 +639,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `email`, `user_category_id`) VALUES
-(1, 'Julian', '0', '', 'julian@gmail', NULL),
-(5, 'Pepe', '1', '', 'pepe@gmail', NULL);
+(1, 'Julian', 'Ferreyra', '', 'julian@gmail', 0),
+(2, 'Pepe', 'Lopez', '', 'pepe@gmail', 1);
 
 -- --------------------------------------------------------
 
@@ -652,6 +652,14 @@ CREATE TABLE `users_categories` (
   `id` int(11) NOT NULL,
   `category` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `users_categories`
+--
+
+INSERT INTO `users_categories` (`id`, `category`) VALUES
+(1, 'user'),
+(2, 'Admin');
 
 --
 -- Índices para tablas volcadas

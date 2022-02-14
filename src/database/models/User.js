@@ -1,47 +1,46 @@
-const Sequelize = require("sequelize");
-
 module.exports = (sequelize, dataTypes) => {
-  const alias = "User";
-  const col = {
-    id: {
-      type: dataTypes.INTEGER(10),
-      primaryKey: true,
-      autoIncrement: true,
-      allowNull: false,
-    },
+    let alias = 'Users';
+    let cols = {
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false
+        },
+        first_name: {
+            type: dataTypes.STRING(100),
+            notNull: false
+        },
+        last_name: {
+            type: dataTypes.STRING(100),
+            notNull: false
+        
+        },
+        password: {
+            type: dataTypes.STRING(100),
+            notNull: false
+        },
+        email: {
+            type: dataTypes.STRING(100),
+            unique: true,
+            isEmail: true,
+            notNull: true
+        },
+        
+    };
+    let config = {
+        tableName: 'users',
+        timestamps: false,
+     
+    };
+    const Users = sequelize.define(alias, cols, config)
+    
+    Users.associate = function(models) {
+        Users.belongsTo(models.UsersCategories, {
+            as: "userCategory",
+            foreignKey: "user_category_id"
+        });
+    }
 
-    name: {
-      type: dataTypes.STRING(255),
-      allowNull: false,
-    },
-
-    email: {
-      type: dataTypes.STRING(255),
-      allowNull: false,
-    },
-
-    password: {
-      type: dataTypes.STRING(255),
-      allowNull: false,
-    },
-
-    remember_token: {
-      type: dataTypes.STRING(100),
-    },
-
-    rol: {
-      type: dataTypes.INTEGER(10),
-    },
-  };
-
-  const config = {
-    timestamps: true,
-    tableName: "users",
-    createdAt: "created_at",
-    updatedAt: "updated_at",
-  };
-
-  const User = sequelize.define(alias, col, config);
-
-  return User;
-};
+    return Users
+}
