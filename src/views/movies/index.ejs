@@ -9,23 +9,11 @@
  
   <body>
     <main>
-      <section>
-        <% if (!locals.user) { %>
-          <div>
-            <button><a href="/create">Agregar una película</a></button>
-          </div>
-        <div>      
-        <% } else { %>
-        <div>
-          <h1>Bienvenida/o <%= locals.user.name %></h1>
-        </div>
-        <div>
-          <button><a href="/logout">Logout</a></button>
-        </div>
-        <% } %>
-      </section>
-        <div>
-     
+      
+      <div>
+        <a class="botonInicio" href="/">inicio</a>  
+      </div>
+
       <section>
         <h1>Listado de películas</h1>
         <ul>
@@ -37,5 +25,6 @@
           </li>	
           <% } %>
         </ul>
+      </main>
      
         <%- include('../partials/footer')  %>

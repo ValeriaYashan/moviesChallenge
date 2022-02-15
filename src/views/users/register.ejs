@@ -28,8 +28,8 @@
                     <% })%>
                 <% }%>
             </section>
-            <p>¿Ya tenés una cuenta?, <a href="/user/login">Inicia sesión</a></p>
-            <form class= "register-form" action="/user/register" method="POST" enctype="multipart/form-data">
+            <p>¿Ya tenés una cuenta?, <a href="/login">Inicia sesión</a></p>
+            <form class= "register-form" action="/users/register" method="POST" enctype="multipart/form-data">
                 <div class="tec-inputs">
                     <input type="text" placeholder="Nombre(s)" name="user" class="user-input" value="<%=locals.old && old.user ? old.user : '' %>">
                     <input type="text" placeholder="Apellido(s)" name="lastname" class="last-name-input" value="<%=locals.old && old.lastname ? old.lastname : '' %>">
@@ -44,9 +44,7 @@
                           <option value="0">Usuario</option>
                         </select>
                       </div>
-                    <label for="imagenUsuario" >Imagen de perfil: </label>
-                    <input type="file" name="imagenUsuario">
-                </div>
+              
                     <div>
                         <button type="submit" name="register" class="submit submit-input">Crear cuenta</button>
                     </div>

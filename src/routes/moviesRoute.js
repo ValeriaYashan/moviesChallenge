@@ -7,9 +7,10 @@ const controller = require('../controllers/moviesController');
 /* Index de Películas. */
 router.get('/movies', controller.index);
 
-/* Detalle de Película. */
+/* Detalle de Película. user */
 router.get('/detail/:id', controller.show);
-
+/* CRUD admin */
+router.get('/crud',controller.crud);
 /* Creación de una película */
 router.get('/create', controller.create);
 router.post('/create', controller.store);

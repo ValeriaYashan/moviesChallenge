@@ -18,7 +18,7 @@
                 <h1>iniciar sesión</h1>
                 <p>Ingresá tu email y tu contraseña</p>
             </section>
-            <form class="login-form" action="users/login" method="POST">
+            <form class="login-form" action="users/login"  method="POST" enctype="multipart/form-data">
                 <% if(locals.msg) { %>
                     <p class="error"><%=msg %></p>
                 <% } %>

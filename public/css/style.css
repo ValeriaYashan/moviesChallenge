@@ -9,12 +9,18 @@
 
 body{
   font-family: 'Montserrat', sans-serif;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   min-height: 100vh;
   position: relative;
 }
 a {
-  color: #00B7FF;
   text-decoration: none;
+  color: #00b7ff;
+}
+
+.text {
+  color: red;
 }
 img{
   width: 100%;

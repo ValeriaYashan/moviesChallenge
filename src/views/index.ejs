@@ -6,23 +6,28 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <header>
-    
-       <button><a href="/login">Login</a></button>
+    <ul>
+    <li>
+     
+      <div>
+       <a class="listado" href="/login">Login</a>
         </div>
         <div>
-          <button><a href="/register">Registro</a></button>
+          <a class="listado" href="/register">Registro</a>
         </div>
         <div>
-          <button><a href="/profile">Mi perfil</a></button>
+          <a class="listado"href="/userprofile">Mi perfil</a>
         </div>
+    </li>
+  </ul>
   </header>
  
   <body>
     <main>
       <section>
         <% if (!locals.user) { %>
-          <div>
-            <button><a href="/create">Agregar una película</a></button>
+          
+            <a class="listado"  href="/crud"> IR CRUD DE PELICULAS</a>
           </div>
         <div>      
         <% } else { %>
@@ -35,7 +40,6 @@
         <% } %>
       </section>
         <div>
-     
             <a class="listado"  href="/movies"> IR AL LISTADO DE PELICULAS</a>
             </div>
       <section>

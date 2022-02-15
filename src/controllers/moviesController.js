@@ -15,6 +15,12 @@ module.exports = {
 		 	})
 			.catch(error => console.log(error));
 	},
+	crud:  (req,res)=> {
+        db.Movies.findAll()
+         .then(function(crud){
+             res.render('movies/crud',{crud})
+         })    
+     },   
 	show: (req, res) => {
 		db.Movies
 			.findByPk(
@@ -28,7 +34,6 @@ module.exports = {
 			})
 			.catch(error => console.log(error));
 	},
-
 
 	create: (req, res) => {
 		sequelize
