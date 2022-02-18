@@ -1,18 +1,16 @@
-//Importacion de modulos
+
 const express = require('express');
 const app = express();
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
-//IMPORTACION DE RUTAS
+
 const indexRoute = require('./routes/indexRoute');
 const detalleRoute = require('./routes/detalleRoute');
 const loginRoute = require('./routes/loginRoute');
 const registroRoute = require('./routes/registroRoute');
-//Asignando puerto a la app
-app.listen(3000, (req, res) => {console.log("Servidor corriendo en el puerto 3000")});
 
-//Seteo carpeta stattic
+
 app.use(express.static('./public'));
 
 app.use(session({secret: 'MyChallenge',
@@ -22,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({extended:false}));
 
-//Motor de plantillas EJS
+
 app.set('view engine', 'ejs');
 app.set('views')
 
@@ -36,3 +34,6 @@ app.get('/logout', (req, res)=> {
     res.redirect('/')
 
 })
+
+
+app.listen(3000, (req, res) => {console.log("Servidor corriendo en el puerto 3000")});

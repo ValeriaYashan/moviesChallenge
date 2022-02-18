@@ -44,10 +44,10 @@ module.exports = (sequelize,dataTypes)=>{
     let config = {
         tableName: "movies",
         timestamps: true,
-       /* paranoid: true,
-        deletedAt: 'destroyTime',*/
         updatedAt: 'updated_at',
-        createdAt: 'created_at'
+        createdAt: 'created_at',
+       /* paranoid: true,
+        timestamps: true,*/
     }
 
 
