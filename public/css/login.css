@@ -1,16 +1,27 @@
 
 .login{
-    margin: 15px auto;
+    margin: 15px;
     max-width: 600px;
 }
-.login a{
+.login  h1 {
+    text-align: center;
+    padding-bottom: 30px;
+    display: block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: blue;
+}
+.login a p{
     text-decoration: none;
 }
+
 .login-title{
     padding: 15px;
     text-align: center;
+    text-decoration: none;
 }
 .login-form{
+    background-color:lightpink;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,14 +65,7 @@
     margin-right: 10px;
 }
 
-.login  h1 {
-    text-align: center;
-    padding-bottom: 30px;
-    display: block;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: blue;
-}
+
 .login-form button{
     width: 60%;
     max-width: 200px;

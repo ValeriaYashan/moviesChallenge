@@ -10,18 +10,20 @@
      </a>
 </header>
 <body>
-    <main>
-        <div class="login">
+  <main>
+      <div class="register">
+          <section class="register-title">
+              <h1>Registrate</h1>
+              </div>
+        <div class="register">
             <section class="register-title">
-                    <a class="register" role="button" aria-pressed="true" href="/login">Log In</a>
+                    <a class="register" role="button" aria-pressed="true" href="/login">Ya tenés cuenta? Logueate</a>
                
                     <a class="botonVolver" role="button" aria-pressed="true" href="/">Volver</a>
              
-    <div class="register">
-
-        <form class="registerImput"  action="registrar" method="POST">
-            
-                <br>
+                    <div class="register-form">     
+                      <form class="register form"   action="registrar" method="POST">
+                <form>
                 <label for="registerImput">Nombre y Apellido</label>
                 <input type="text" class="form-control"  name="name" aria-describedby="emailHelp" placeholder="Nombre" value="<%= locals.oldData ? oldData.name : null %>">
                 <% if (locals.errors && errors.name) { %> 
@@ -68,7 +70,7 @@
           </form>
 
     </div>
-
+</main>
 
 </body>
 <footer>

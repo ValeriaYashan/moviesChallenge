@@ -110,7 +110,12 @@ a{
   padding: 10px;
   border-radius: 10px;
 }
-
+.botonSalir{
+  width: 60%;
+  max-width: 200px;
+  border-radius: 5px;
+  border-color: blueviolet;
+}
 .botonVolver{
   width: 60%;
   max-width: 200px;
