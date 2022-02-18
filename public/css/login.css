@@ -31,8 +31,8 @@
     color: red;
 }
 .login-form input:focus{
-    border: 2px solid var(--light-border);
-    box-shadow: 3px 3px 10px var(--light-border) ;
+    border: 2px solid blue;
+    box-shadow: 3px 3px 10px blue ;
 }
 .login-form label{
     display: flex;
@@ -53,41 +53,18 @@
     margin-bottom: 0;
     margin-right: 10px;
 }
+
+.login  h1 {
+    text-align: center;
+    padding-bottom: 30px;
+    display: block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: blue;
+}
 .login-form button{
     width: 60%;
     max-width: 200px;
+    border-radius: 5px;
+    border-color: blueviolet;
 }
-.login > p{
-    text-align: center;
-    padding-bottom: 30px;
-}
-.login > a{
-    text-align: center;
-    display: block;
-    margin-bottom: 20px;
-    color: var(--dark);
-    font-weight: bold;
-}
-.login p a{
-    color: var(--dark);
-    font-weight: bold;
-}
-.alt-login{
-    width: 70%;
-    margin: 0 auto;
-    text-align: center;
-}
-.media-login{
-    display: flex;
-    justify-content: space-evenly;
-}
-.media-login i{
-    width: 50px;
-    height: 50px;
-    margin: 20px 0;
-    font-size: 25px;
-    padding: 10px;
-    background-color: var(--soft);
-    border-radius: 10px;
-}
-

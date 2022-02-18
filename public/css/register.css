@@ -26,13 +26,13 @@
     
 }
 
-.tec-inputs{
+.registerImput{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 10px;
 }
-.tec-inputs > input {
+.registerImput input {
     width: 70%;
     max-width: 400px;
     margin-bottom: 25px;
@@ -41,25 +41,25 @@
     border: 1px solid var(--light-border);
     outline: none;
 }
-.tec-inputs p.label{
+.registerImput p.label{
     width: 70%;
     max-width: 400px;
     margin-bottom: 25px;
     font-size: 14px;
     text-align: justify;
 }
-.tec-inputs > div{
+.registerImput > div{
     width: 50%;
 }
 .checkitems .submit-input{
     width: 60%;
     margin: 20px auto;
 }
-.tec-inputs input:focus{
+.registerImput input:focus{
     border: 2px solid var(--light-border);
     box-shadow: 3px 3px 10px var(--light-border) ;
 }
-.tec-inputs .checkitems{
+.registerImput .checkitems{
     width: 70%;
 }
 .check{
@@ -83,7 +83,6 @@ main p a{
     font-weight: bold;
 }
 
-.login-form button{
-    width: 60%;
-    max-width: 200px;
+.tipoUsuario{
+    color:red
 }

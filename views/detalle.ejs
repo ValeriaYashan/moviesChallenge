@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+  
+    <title>DETALLE</title>
+</head>
+
+<header>
+    <a class="detalle">DETALLE</a>
+</header>
+          
+                        <a class="btn btn-outline-success" role="button" aria-pressed="true" href="/">Volver</a>
+            
+<body>
+
+    <div class="detalle">
+
+                    <h2 class="detalle">Película: <%= pelicula.title %>
+                    </h2>
+
+                    <% if (pelicula.generos) { %>
+                        <h2>Género: <%= pelicula.generos.name %>
+                        </h2>
+                        <% } else {%>
+                            <h2>Género: Sin Genero</h2>
+                            <% } %>
+
+                            <h2>Actores:</h2>
+                                <ul>
+                                    <% for(let i=0; i < pelicula.actores.length; i++) { %>
+
+                                        <li>
+                                            <%= pelicula.actores[i].first_name %>
+                                                <%= pelicula.actores[i].last_name %>
+                                        </li>
+
+                                        <% } %>
+                                </ul>
+                                <h2>Rating: <%= pelicula.rating %></h2>
+                                    <h2>Duracion: <%= pelicula.length %> min.</h2>
+                                    <h2>Fecha de Estreno: <%= pelicula.release_date %> </h2>
+
+<br>
+
+                                    <a href="/detalle/editar/<%= pelicula.id %> ">
+                                        <button class="btn btn-danger"  type="submit">Editar</button>
+                                    </a>
+
+                                    <form action="/detalle/borrar/<%= pelicula.id %>" method="POST">
+                                        <button class="btn btn-danger"  type="submit">Borrar</button>
+                                    </form>
+                                   
+    </div>
+
+</body>
+<footer>
+	<p>Copyright 2022 - All rights reserved</p>
+</footer>
+</html>

@@ -11,7 +11,6 @@ Debe registrarse/loguearse si ya tiene cuenta
 Si es adm puede agregar película desde la Home-page. 
 Si es user le mostrará bienvenid@ + su nombre
 
-FALTA LOGIN/REGISTER/PERFIL
 
 ##commit 3##
 -Cada película tendrá un link que muestre el detalle completo.

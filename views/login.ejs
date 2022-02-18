@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/login.css" />
+    <title>Login</title>
+</head>
+<header>
+  <a class="logo">
+    <img src="/img/logo-SextoSol.png" width='100' alt='Tu cine'>  
+     </a>
+</header>
+<body>
+    <main>
+        <div class="login">
+            <section class="login-title">
+                <h1>iniciar sesión</h1>
+         <div class="login-form">
+        <form class="login form"  action="login" method="POST">
+              <label for="login-form">Email</label>
+              <input type="email" class="form-control"   name="email" aria-describedby="emailHelp" placeholder="Email" value="<%= locals.oldData ? oldData.email : null %>">
+              
+              <% if (locals.errors && errors.email) { %> 
+                <small id="emailHelp" class="cambiado"><%= errors.email.msg %> </small>
+                <% } else if (locals.errors && errors.errors) { %>  
+                    <small id="emailHelp" class="cambiado"><%= errors.errors.msg %> </small>
+             <% } %> 
+            </div>
+        <div class="login-form">
+              <label for="password">Password</label>
+              <input type="password" class="form-control"  name="password" placeholder="Contraseña">
+              <% if (locals.errors && errors.password) { %> 
+                <small id="emailHelp" class="form-text text-danger"><%= errors.password.msg %> </small>
+                <% }  else {%> <small id="passHelp" class="cambiado"> </small> <% } %>
+         
+<br>
+  <div class="remember">
+    <input type="checkbox" class="remember-input" id="login-remember" name="remember">
+    <label for="login-remember">Recordarme</label>
+    <br>
+    <button type="submit" class="login-form"  >Ingresar</button>
+          </form>
+    </div>
+
+</body>
+<footer>
+	<p>Copyright 2022 - All rights reserved</p>
+</footer>
+</html>
+

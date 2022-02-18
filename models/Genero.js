@@ -1,26 +1,24 @@
 module.exports = (sequelize,dataTypes)=>{
-    let alias = 'Actores';
+    let alias = 'Generos';
     let cols = {
     
     id:{
         type: dataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement:true
+        autoIncrement:true,
+        allowNull: false
     },
-    first_name:{
+    name:{
         type: dataTypes.STRING,
         allowNull: false
     },
-    last_name:{
-        type: dataTypes.STRING,
+    ranking: {
+        type: dataTypes.INTEGER,
         allowNull: false
     },
-    rating: {
-        type: dataTypes.DECIMAL,
+    active: {
+        type: dataTypes.INTEGER,
         allowNull: false
-    },
-    favorite_movie_id: {
-        type: dataTypes.INTEGER
     },
     updated_at: {
         type: dataTypes.DATE
@@ -32,7 +30,7 @@ module.exports = (sequelize,dataTypes)=>{
     };
 
     let config = {
-        tableName: "actors",
+        tableName: "genres",
         timestamps: true,
         /*paranoid: true,
         deletedAt: 'destroyTime',*/
@@ -41,19 +39,14 @@ module.exports = (sequelize,dataTypes)=>{
     }
 
 
-const Actor = sequelize.define(alias, cols, config);
+const Generos = sequelize.define(alias, cols, config);
+Generos.associate = function(models){
 
-Actor.associate = function(models) {
-    Actor.belongsToMany(models.Peliculas, {
-        as: "pelicula",
-        through:'actor_movie',
-        foreignKey: 'actor_id',
-        otherKey:'movie_id',
-        timestamps: true
-    });
+    Generos.hasMany(models.Peliculas, {
+        as: 'pelicula',
+        foreignKey:'genre_id'
+    })
 }
 
-
-return Actor;
+return Generos;
 }
-

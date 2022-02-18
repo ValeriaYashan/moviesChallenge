@@ -67,10 +67,20 @@ a{
   color: blue;
 }
 
+/*detalle*/
+.detalle{
+  margin: 10px 30px;
+  text-align: center;
+  color:black;
+  text-decoration:overline;
+}
 
-
-
-.botonInicio{
+.formulario{
+  margin: auto;
+  width: 20%;
+}
+.botonInicio
+{
   color: gold;
   background-color: green;
   padding: 10px;
@@ -100,7 +110,10 @@ a{
   padding: 10px;
   border-radius: 10px;
 }
-.formulario{
-  margin: auto;
-  width: 20%;
+
+.botonVolver{
+  width: 60%;
+  max-width: 200px;
+  border-radius: 5px;
+  border-color: blueviolet;
 }
