@@ -4,6 +4,7 @@
 -Creación de repositorio en Github "Movies Challenge"
 -Creación de proyecto en Node con Movies_db
 -Creación de rutas, controladores y vistas ( EJS )
+/*Completo*/
 
 ##commit 2##
 -Creación del Home-page del proyecto, debe mostrar el listado de todas las películas
