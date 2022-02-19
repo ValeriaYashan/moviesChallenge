@@ -11,19 +11,19 @@
 </header>
 <body>
   <main>
-      <div class="register">
-          <section class="register-title">
+  
+      <div>
               <h1>Registrate</h1>
+              <a class="register" role="button" aria-pressed="true" href="/login">Ya tenés cuenta? Logueate</a>
+               
+              <a class="botonVolver" role="button" aria-pressed="true" href="/">Volver</a>
               </div>
         <div class="register">
             <section class="register-title">
-                    <a class="register" role="button" aria-pressed="true" href="/login">Ya tenés cuenta? Logueate</a>
-               
-                    <a class="botonVolver" role="button" aria-pressed="true" href="/">Volver</a>
-             
+                
                     <div class="register-form">     
                       <form class="register form"   action="registrar" method="POST">
-                <form>
+               <!-- Grupo: Nombre -->
                 <label for="registerImput">Nombre y Apellido</label>
                 <input type="text" class="form-control"  name="name" aria-describedby="emailHelp" placeholder="Nombre" value="<%= locals.oldData ? oldData.name : null %>">
                 <% if (locals.errors && errors.name) { %> 
@@ -41,15 +41,18 @@
                     <small id="emailHelp" class="form-text text-danger"><%= errors.errors.msg %> </small>
              <% } %> 
             </div>
-            <div class="registerImput">
-              <label for="exampleInputPassword1">Contraseña</label>
-              <input type="password" class="form-control"  name="password" placeholder="Contraseña">
-              <% if (locals.errors && errors.password) { %> 
-                <small id="emailHelp" class="form-text text-danger"><%= errors.password.msg %> </small>
-                <% }  else {%> <small id="passHelp" class="form-text text-muted">La contraseña debe tener almenos 8 caracteres alfanuméricos </small> <% } %>
-            </div>
-         <div>
-         
+            
+			<!-- Grupo: Contraseña -->
+      <div class="formulario__grupo" id="grupo__password">
+				<label for="password" class="formulario__label">Contraseña</label>
+				<div class="formulario__grupo-input">
+					<input type="password" class="formulario__input" name="password" id="password">
+				</div>
+				<p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+			</div>
+      <!-- Grupo: Usuario -->
+      
+      <div class="formulario__grupo" id="grupo__tipoUsuario">
               <input type="radio" class="form-check-input"  name="rol" value="admin">
               <label class="tipoUsuario" for="tipoUsuario">Administrador</label>
             </div>
@@ -68,8 +71,7 @@
             <button type="submit" class="botonRegistrar"  >Registrar</button>
             <% } %>
           </form>
-
-    </div>
+        </section>
 </main>
 
 </body>

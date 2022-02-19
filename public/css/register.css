@@ -1,3 +1,9 @@
+main {
+	max-width: 800px;
+	width: 90%;
+	margin: auto;
+	padding: 40px;
+}
 
 .register{
     display: flex;
@@ -79,7 +85,18 @@ main p a{
     color: var(--dark);
     font-weight: bold;
 }
+.formulario__input-error{
+    color:red;
+    font-size:15px;
 
+}
 .tipoUsuario{
     color:red
+}
+.botonVolver
+{
+  color: gold;
+  background-color: green;
+  padding: 10px;
+  border-radius: 10px;
 }
