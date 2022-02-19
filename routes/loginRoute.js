@@ -12,7 +12,7 @@ router.post('/', [check('email').isEmail(), check('password').isLength({ min: 8 
 
 
 
-/*router.get('/check',authMiddleware, function(req, res){
+router.get('/check',authMiddleware, function(req, res){
     
     if(req.session.usuarioLogueado == 'undefined') {
         res.send('NO ESTAS LOGUEADO');
@@ -20,7 +20,7 @@ router.post('/', [check('email').isEmail(), check('password').isLength({ min: 8 
         res.send('ESTAS LOGUEADO CON' + req.session.usuarioLogueado)
     }
 
-})*/
+})
 
 
 module.exports = router;

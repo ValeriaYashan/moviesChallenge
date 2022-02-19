@@ -25,8 +25,8 @@ CRUD
 -Agregar una nueva película, modificarla, eliminarla (paranoid)
 -Colocar validaciones para los campos de formularios que son obligatorios
 
-AGREGAR MAS CAMPOS
-FALTA QUE SI ESTA VACIO ALGUN CAMPO ENTONCES LO MUESTRE sin ese campo
+
+
 MEJORAR LA PREGUNTA DEL DELETE CON VENTANA
 
 ##commit 5##

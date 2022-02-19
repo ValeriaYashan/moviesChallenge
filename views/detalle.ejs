@@ -13,12 +13,12 @@
 <body>
 <main>
     <div class="detalle">
-                    <h2 class="detalle">Película: <%= pelicula.title %></h2>
+                    <h1 class="detalle">Película: <%= pelicula.title %></h1>
                     <% if (pelicula.generos) { %>
-                        <h2>Género: <%= pelicula.generos.name %>
-                        </h2>
+                        <h3>Género: <%= pelicula.generos.name %>
+                        </h3>
                         <% } else {%>
-                            <h2>Género: Sin Genero</h2>
+                            <h3>Género: Sin Genero</h3>
                             <% } %>
                             <h2>Actores que participan:</h2>
                                 <ul>
@@ -31,7 +31,7 @@
                                 </ul>
                                 <h2>Rating: <%= pelicula.rating %></h2>
                                     <h2>Duracion: <%= pelicula.length %> min.</h2>
-                                    <h2>Fecha de Estreno: <%= pelicula.release_date %> </h2>
+                                    <h3>Fecha de Estreno: <%= pelicula.release_date %> </h3>
                                   <br>
                                     <a href="/detalle/editar/<%= pelicula.id %> ">
                                         <button class="botonEditar"  type="submit">Editar</button>
