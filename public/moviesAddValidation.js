@@ -89,16 +89,7 @@ window.addEventListener("load", () => {
             case !_length.value.trim():
                 _length.classList.add("is-invalid");
                 _length.placeholder = "El campo es obligatorio";
-                break;
-            case _length.value < 60 || _length.value > 360:
-                _length.classList.add("is-invalid");
-                _length.placeholder = "La duración no puede ser menor a 60 ni mayor a 360 minutos.";
-                _length.value = "";
-                let lengthError = {name: "Duración", msg: _length.placeholder }
-                let errorFind = errors.find(element => element.name == lengthError.name)
-                if(!errorFind){
-                    errors.push(lengthError);
-                }
+                break;    
             default:
                 _length.classList.remove("is-invalid");
                 _length.classList.add("is-valid");

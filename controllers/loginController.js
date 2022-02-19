@@ -1,9 +1,6 @@
 const db = require('../models');
 
-const {
-        check,
-        body,
-        validationResult,
+const { check,body,validationResult,
 } = require("express-validator");
 
 const loginController = {
