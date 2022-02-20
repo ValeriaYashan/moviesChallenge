@@ -7,10 +7,12 @@ Instrucciones para crear la estructura de base de datos y para correr el Proyect
 
 
 Administrador (carga, modificación y baja de películas)
-Usuario:admin@mail.com
-Password:Administrador123
+Usuario = Administrador2
+email = admin@gmail.com 
+password` = Soyadministrador
 
-Usuario (visualización del listado y detalle de las películas)
-Usuario:cliente@mail.com
+ (visualización del listado y detalle de las películas)
+Usuario:cliente
+mail:cliente@mail.com
 Password:Clientehabitual123
 

@@ -15,8 +15,9 @@ const validateMovies = [check('').isEmail().withMessage('Debes completar un emai
 router.get('/', indexController.listado)
 
 /*administrador*/
-router.get('/crear',authMiddleware,indexController.crear)
-/*router.get('/crear',authMiddleware,validateMovies, indexController.crear)*/
+/*router.get('/crear',authMiddleware,moviesAddValidation, indexController.crear)*/
+router.get('/crear',authMiddleware, indexController.crear)
+
 router.post('/crear',authMiddleware, indexController.guardar)
 
 module.exports = router;

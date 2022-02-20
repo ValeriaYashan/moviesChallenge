@@ -3,7 +3,9 @@
   box-sizing: border-box;
 }
 
-
+.bienvenido h2{
+  text-decoration: dotted;
+}
 body{
   font-family: 'Montserrat', sans-serif;
   padding: 50px;
@@ -24,13 +26,32 @@ a,p {
 img{
   width: 100%;
 }
+figure{
+  width: 20%;
+}
+input, select{
+  width: 60%;
+  height: 25px;
+}
 h1{
   text-align: center;
   text-decoration:underline;
     font-size: 30px;
     color:blue;
   }
-
+  .fondoCRUD{
+    padding: 30px;
+    background-image: url('/img/peliculas.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .fondoTransparente{
+    background-color:rgba(189,199,191,0.7);
+    width: 30%;
+    padding:10px;
+    margin: auto;
+    text-align: center;
+  }
 .listado{
   color:black;
   text-decoration:solid;
@@ -90,10 +111,9 @@ li {
   margin: auto;
   width: 20%;
 }
-.botonVolver
-{
-  color: gold;
-  background-color: green;
+.botonVolver{
+  color: white;
+  background-color: #0B5ED7;
   padding: 10px;
   border-radius: 10px;
 }
@@ -101,6 +121,11 @@ li {
   color: gold;
   background-color: green;
   padding: 10px;
+  border-radius: 10px;
+}
+.formulario, .mostrarFormulario{
+  margin: auto;
+  width: 40%;
   border-radius: 10px;
 }
 .botonEliminar{

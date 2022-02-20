@@ -1,45 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>Crear</title>
+    <title>Movie add</title>
+    <link rel='stylesheet' href='/css/style.css' />
 </head>
+
 <body>
-    <form action="/crear" method="POST">
-    <div>
-        <label for="titulo">Titulo</label>
-        <input type="text" name="titulo" id="titulo" required>>
-    </div>
-    <div>
-        <label for="">Rating</label>
-        <input type="text" name="rating" id="rating"required>
-    </div>
-    <div>
-        <label for="">Premios</label>
-        <input type="text" name="premios" id="premios"required>
-    </div>
-    <div>
-        <label for="">Duracion</label>
-        <input type="text" name="duracion" id="duracion"required>
-    </div>
-    <div>
-        <label for="">Fecha de estreno</label>
-        <input type="date" name="release_date" id="release_date"required>
-    </div>
-    <div>
-        <label for="">Genero</label>
-        <select name="genero">
-           <% for (let i=0; i< generos.length; i++) { %> 
-            <option value="<%= generos[i].id %> "> <%= generos[i].name %>  </option>
-            <% } %> 
-        </select>
-    </div>
-    <button class="botonAgregar" type="submit">Crear</button>
-</form>
+    <figure>
+        <img src="/img/peliculas.png" alt="">
+      </figure>
+    <h1 class="moviesAddTitulo"></h1>  
+    <br>
+    <section id="formulario" >
+        <article class="mostrarFormulario">
+            <ul class="errores"></ul>
+
+            <form action="/crear" method="POST">
+                <div>
+                    <label for="titulo">Titulo</label>
+                    <input type="text" name="titulo" id="titulo" required>
+                </div>
+                <div>
+                    <label for="rating">Rating</label>
+                    <input type="text" name="rating" id="rating" required>
+                </div>
+                <div>
+                    <label for="premios">Premios</label>
+                    <input type="text" name="premios" id="premios" required>
+                </div>
+                <div>
+                    <label for="duracion">Duracion</label>
+                    <input type="number" name="duracion" id="duracion" required value="1" min="60" max="360">
+                </div>
+                <div>
+                    <label for="release_date">Fecha de estreno</label>
+                    <input type="date" name="release_date" id="release_date" required>
+                </div>
+                <div>
+                    <label for="genreID">Género </label>
+                    <div>
+                        <select name="genre_id" id="genre_id" required>
+                            <option value="" disabled selected>- Seleccione el género - </option>
+                       <% for (let i=0; i< generos.length; i++) { %> 
+                        <option value="<%= generos[i].id %> "> <%= generos[i].name %>  </option>
+                        <% } %> 
+                    </select>
+                </div>
+                <button class="botonAgregar" type="submit">Crear</button>
+            </form>
+        </article>
+    </section>
+    <script src="/js/moviesAddValidation.js"></script>
+
 </body>
+
 <footer>
 	<p>Copyright 2022 - All rights reserved</p>
 </footer>

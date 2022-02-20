@@ -11,28 +11,28 @@
     <main>
     <form action="/detalle/editar/<%= pelicula.id %> " method="POST">
     <div>
-        <label for="">Titulo</label>
+        <label for="titulo">Titulo</label>
         <input type="text" name="titulo" id="titulo" required value="<%= pelicula.title %> ">
     </div>
     <div>
-        <label for="">Rating</label>
+        <label for="rating">Rating</label>
         <input type="text" name="rating" id="rating" required value="<%= pelicula.rating %> ">
     </div>
     <div>
-        <label for="">Premios</label>
+        <label for="premios">Premios</label>
         <input type="text" name="premios" id="premios" required value="<%= pelicula.awards %> ">
     </div>
     <div>
-        <label for="">Duracion</label>
-        <input type="text" name="duracion" id="duracion"required  value="<%= pelicula.length %> ">
+        <label for="duracion">Duracion</label>
+        <input type="number" name="duracion" id="duracion"required  value="<%= pelicula.length %> "required value="1" min="60" max="360">>
     </div>
     <div>
-        <label for="">Fecha de estreno</label>
+        <label for="release_date">Fecha de estreno</label>
         <input type="date" name="release_date" id="release_date" required value="<%= pelicula.release_date %> ">
     </div>
     
     <div>
-        <label for="">Genero</label>
+        <label for="genreID">Genero</label>
         <select name="genero">
            <% for (let i=0; i< generos.length; i++) { %> 
             <% if (generos[i].id == pelicula.genre_id) { %> 

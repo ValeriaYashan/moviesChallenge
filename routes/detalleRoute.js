@@ -3,10 +3,8 @@ const router = express.Router();
 const detalleController = require('../controllers/detalleController')
 const authMiddleware = require('../middlewares/authMiddleware')
 
-/*ruta del usuario*/
+/*ruta del invitado y usuario*/
 router.get('/:id', detalleController.detalle);
-
-
 
 /*rutas del administrador*/
 router.get('/editar/:id',authMiddleware, detalleController.editar);

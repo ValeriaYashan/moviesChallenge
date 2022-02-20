@@ -1,142 +1,113 @@
-window.addEventListener("load", () => {
+window.onload = function(){
+    let titulo = document.querySelector('.moviesAddTitulo')
+    let formulario = document.querySelector('#formulario');
+    titulo.innerHTML = 'AGREGAR PELÍCULA';
+    titulo.classList.add('titulo');
+    formulario.classList.add('fondoCRUD');
+    
 
-    let _title = document.querySelector('#title')
-    let _rating = document.querySelector('#rating')
-    let _awards = document.querySelector('#awards')
-    let _release = document.querySelector('#release')
-    let _releaseError = document.querySelector('.dateError')
-    let _length = document.querySelector('#length')
-    let _genre = document.querySelector('#genre')
-    let _genreError = document.querySelector('.genreError')
-    let _form = document.querySelector('form')
-    let message = document.querySelector('.message')
+  
+    let form = document.querySelector('.form');
+    form.title.focus();
 
-    let errors = []
-
-    _title.focus()
-
-    _title.addEventListener("blur", () => {
-        switch (true) {
-            case !_title.value.trim():
-                _title.classList.add("is-invalid");
-                _title.placeholder = "El campo es obligatorio";
-                break;
-            default:
-                _title.classList.remove("is-invalid");
-                _title.classList.add("is-valid");
-                _title.placeholder = "";
+    form.title.addEventListener('blur',function(e){
+        if(form.title.value == ""){
+            form.title.classList.add('is-invalid');
+            
+        } else {
+            form.title.classList.add('is-valid');
+            form.title.classList.remove('is-invalid');
         }
     })
 
-    _rating.addEventListener("blur", () => {
-        switch (true) {
-            case !_rating.value.trim():
-                _rating.classList.add("is-invalid");
-                _rating.placeholder = "El campo es obligatorio";
-                break;
-            case _rating.value <= 0 || _rating.value > 10:
-                _rating.classList.add("is-invalid");
-                _rating.placeholder = "La calificación debe ser entre 1 y 10";
-                let ratingError = {name: "Calificación", msg: _rating.placeholder };
-                let errorFind = errors.find(error => error.name == ratingError.name)
-                if(!errorFind){
-                    errors.push(ratingError);
-                }
-                break;
-            default:
-                _rating.classList.remove("is-invalid");
-                _rating.classList.add("is-valid");    
+    form.rating.addEventListener('blur',function(e){
+        if(form.rating.value == ""){
+           
+
+            form.rating.classList.add('is-invalid');
+            
+        } else {
+            form.rating.classList.remove('is-invalid');
+            form.rating.classList.add('is-valid');
         }
     })
 
-    _awards.addEventListener("blur", () => {
-        switch (true) {
-            case !_awards.value.trim():
-                _awards.classList.add("is-invalid");
-                _awards.placeholder = "El campo es obligatorio";
-                break;
-            case _awards.value <= 0 || _awards.value > 10:
-                _awards.classList.add("is-invalid");
-                _awards.placeholder = "Los premios deben ser entre 1 y 10";
-                let awardsError = {name: "Premios", msg: _awards.placeholder };
-                let errorFind = errors.find(error => error.name == awardsError.name)
-                if(!errorFind){
-                    errors.push(awardsError);
-                }
-                break;
-            default:
-                _awards.classList.remove("is-invalid");
-                _awards.classList.add("is-valid");
-                _awards.placeholder = "";
+
+    form.addEventListener('submit', (e) => {
+        
+        let errors = [];
+
+        let title = document.querySelector('#title');
+        let rating = document.querySelector('#rating');
+        let awards = document.querySelector('#awards');
+        let release_date = document.querySelector('#release_date');
+        let length = document.querySelector('#length');
+        
+
+        if (title.value == '') {
+            errors.push('El campo titulo no puede estar vacío');
+            title.classList.add('is-invalid');
+        } else {
+            title.classList.add('is-valid');
+            title.classList.remove('is-invalid');
+            form.rating.focus();
+        };
+        if (rating.value <= 0 || rating.value > 10.0) {
+            errors.push('El campo calificación no puede ser menor a cero ni mayor a 10');
+            rating.classList.add('is-invalid');
+        } else {
+            rating.classList.add('is-valid');
+            rating.classList.remove('is-invalid');
+            form.awards.focus();
+        };
+        if (awards.value <= 0 || awards.value > 10) {
+            errors.push('El campo premios no puede ser menor a cero ni mayor a 10');
+            awards.classList.add('is-invalid');
+        } else {
+            awards.classList.add('is-valid');
+            awards.classList.remove('is-invalid');
+            form.release_date.focus();
+        };
+        if (release_date.value == "") {
+            errors.push('El campo fecha de creación no puede estar vacio');
+            release_date.classList.add('is-invalid');
+        } else {
+            release_date.classList.add('is-valid');
+            release_date.classList.remove('is-invalid');
+            form.length.focus();
+        };
+        if (length.value < 60 || length.value > 360) {
+            errors.push('El campo duración no puede ser menor a 60 ni mayor a 360 minutos');
+            length.classList.add('is-invalid');
+        } else {
+            length.classList.add('is-valid');
+            length.classList.remove('is-invalid');
+            form.genre_id.focus();
+        };
+        if (genre_id.value == '') {
+            errors.push('El campo género no puede estar vacío');
+            genre_id.classList.add('is-invalid');
+        } else {
+            genre_id.classList.add('is-valid');
+            genre_id.classList.remove('is-invalid');
+        };
+        
+       
+
+        if (errors.length > 0) {
+            e.preventDefault();
+            let ulErrors = document.querySelector('.errores');
+            ulErrors.classList.add('alert-warning');
+            ulErrors.innerHTML = '';
+            for (let i = 0; i < errors.length; i++) {
+                ulErrors.innerHTML += `<li >  ${errors[i]} </li>`;
+            };
+        }else{
+            alert('La validación fué exitosa')
+            form.submit();
         }
-    })
 
-    _release.addEventListener("blur", () => {
-        switch (true) {
-            case !_release.value.trim():
-                _release.classList.add("is-invalid");
-                _releaseError.innerHTML = 'La fecha de creación no puede estar vacía'
-                break;
-            default:
-                _releaseError.innerHTML = ''
-                _release.classList.remove("is-invalid");
-                _release.classList.add("is-valid");
-        }
-    })
+    });
 
-    _length.addEventListener("blur", () => {
-        switch (true) {
-            case !_length.value.trim():
-                _length.classList.add("is-invalid");
-                _length.placeholder = "El campo es obligatorio";
-                break;    
-            default:
-                _length.classList.remove("is-invalid");
-                _length.classList.add("is-valid");
-                _length.placeholder = "";
-        }
-    })
 
-    _genre.addEventListener("blur", () => {
-        switch (true) {
-            case !_genre.value.trim():
-                _genre.classList.add("is-invalid");
-                _genreError.innerHTML = 'El género no puede estar vacío'
-                break;
-            default:
-                _genreError.innerHTML = ''
-                _genre.classList.remove("is-invalid");
-                _genre.classList.add("is-valid");
-        }
-    })
-
-    _form.addEventListener("submit", e => {
-        e.preventDefault();
-        let cont = 0;
-        let formElements = _form.elements;
-
-        for (let index = 0; index < formElements.length - 1; index++) {
-            if (formElements[index].value == "") {
-                formElements[index].classList.toggle("is-invalid");
-                message.innerHTML = `Todos los campos son obligatorios`;
-
-                cont++;
-            }
-        }
-
-        if(errors.length != 0){
-            cont++;
-            document.querySelector(".errors").classList.add('alert-warning');
-            errors.forEach(element => {
-                document.querySelector(".errors").innerHTML += `<li>${element.name + ": " + element.msg}</li>`
-            })
-        }else {
-            document.querySelector(".errors").innerHTML = "";
-        }
-        if(cont === 0){
-            alert("Se guardó la película correctamente.")
-            _form.submit();
-        }
-    })
-
-})
+}
