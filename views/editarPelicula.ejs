@@ -10,6 +10,12 @@
 <body>
     <main>
     <form action="/detalle/editar/<%= pelicula.id %> " method="POST">
+        <style>
+            label{
+                display:block;
+                float: inline-start;
+            }
+        </style>
     <div>
         <label for="titulo">Titulo</label>
         <input type="text" name="titulo" id="titulo" required value="<%= pelicula.title %> ">

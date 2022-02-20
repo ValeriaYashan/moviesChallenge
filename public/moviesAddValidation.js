@@ -1,13 +1,6 @@
 window.onload = function(){
-    let titulo = document.querySelector('.moviesAddTitulo')
-    let formulario = document.querySelector('#formulario');
-    titulo.innerHTML = 'AGREGAR PELÍCULA';
-    titulo.classList.add('titulo');
-    formulario.classList.add('fondoCRUD');
     
-
-  
-    let form = document.querySelector('.form');
+    let form = document.querySelector('.mostrarFormulario');
     form.title.focus();
 
     form.title.addEventListener('blur',function(e){
@@ -92,7 +85,6 @@ window.onload = function(){
             genre_id.classList.remove('is-invalid');
         };
         
-       
 
         if (errors.length > 0) {
             e.preventDefault();
