@@ -13,7 +13,7 @@ Usuario = Administrador2
 
 email = admin@gmail.com 
 
-password = Soyadministrador
+Password:Soyadministrador
 ---
  (visualización del listado y detalle de las películas)
 Usuario:cliente
@@ -30,7 +30,8 @@ Password:Clientehabitual123
 
 ## Ejecutar la aplicación en modo de desarrollo.
 ---
-Abrir http: // localhost: 3000 para verlo en el navegador.
+-Abrir http: // localhost: 3000 para verlo en el navegador.
+
 -Por último, con la base de datos conectada, deberá utilizarse el comando "npm start".
 
 
