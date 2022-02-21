@@ -39,19 +39,7 @@ h1{
     font-size: 30px;
     color:blue;
   }
-  .fondoCRUD{
-    padding: 30px;
-    background-image: url('/img/peliculas.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .fondoTransparente{
-    background-color:rgba(189,199,191,0.7);
-    width: 30%;
-    padding:10px;
-    margin: auto;
-    text-align: center;
-  }
+
 .listado{
   color:black;
   text-decoration:solid;
