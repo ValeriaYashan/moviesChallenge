@@ -73,3 +73,10 @@ background-color: pink;
     font-size: 12px;
     color: red;
 }
+.botonVolver
+{
+  color: gold;
+  background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+}

@@ -51,26 +51,17 @@ main {
     font-size: 14px;
     text-align: justify;
 }
-.registerImput > div{
+.registerImput  div{
     width: 50%;
 }
-.checkitems .submit-input{
+.check-items .submit-input{
     width: 60%;
     margin: 20px auto;
-}
-.registerImput input:focus{
     border: 2px solid var(--light-border);
     box-shadow: 3px 3px 10px var(--light-border) ;
-}
-.registerImput .checkitems{
     width: 70%;
-}
-.check{
-    display: flex;
-    margin-bottom: 15px;
+    display:block;
     align-items: center;
-    max-width: 400px;
-    margin: 10px auto;
 }
 .check input{
     width: 30px;
@@ -94,7 +85,7 @@ main p a{
     color:red
   
 }
-.botonVolver
+.botonLogin
 {
   color: gold;
   background-color: green;
@@ -104,6 +95,13 @@ main p a{
 .botonRegistrar{
     color: white;
     background-color: #00B7FF;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .botonVolver
+  {
+    color: gold;
+    background-color: red;
     padding: 10px;
     border-radius: 10px;
   }
