@@ -92,6 +92,7 @@ main p a{
 }
 .tipoUsuario{
     color:red
+  
 }
 .botonVolver
 {
@@ -100,3 +101,9 @@ main p a{
   padding: 10px;
   border-radius: 10px;
 }
+.botonRegistrar{
+    color: white;
+    background-color: #00B7FF;
+    padding: 10px;
+    border-radius: 10px;
+  }

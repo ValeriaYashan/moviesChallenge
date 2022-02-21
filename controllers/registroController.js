@@ -62,3 +62,10 @@ const registroController = {
 };
 
 module.exports = registroController;
+        
+               
+                
+
+
+
+
